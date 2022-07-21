@@ -1,0 +1,52 @@
+<div class="user container" ng-controller="userCtrl">
+    <div class="back">
+        <a href="#!/">
+            <p>&#10132;</p> Back
+        </a>
+    </div>
+    <div class="userHeader">
+        <div class="user-logo">
+            <img src={{user.avatar_url}} alt="" srcset="">
+        </div>
+        <div class="user-about" ng-switch="user.name">
+            <h3 ng-switch-when!="null">{{user.name}}</h3>
+            <h3 ng-switch-when="null">userName</h3>
+            <span>{{user.company}}</span>
+        </div>
+    </div>
+    <div class="bio" ng-switch="user.bio">
+        <h5>Bio</h5>
+        <p>{{user.bio}}</p>
+        <p ng-switch-when="null">The user biography.</p>
+    </div>
+    <div class="work" ng-switch="user.company">
+        <h5>Works at</h5>
+        <p>{{user.company}}</p>
+        <p ng-switch-when="null">The user company</p>
+    </div>
+    <div class="repo-follower">
+        <div class="repo">
+            <h5>Repositories</h5>
+            <span>{{user.public_repos}}</span>
+        </div>
+        <div class="followers">
+            <h5>Followers</h5>
+            <span>{{user.followers}}</span>
+        </div>
+    </div>
+    <div class="pinned-repo">
+        <h5>Pinned Repositories</h5>
+        <p ng-show="repositories.length==0">No Repositories to show</p>
+        <div class="single-repo" ng-repeat="repo in repositories">
+            <div class="avatar">
+                <img src="https://media.istockphoto.com/vectors/male-profile-flat-blue-simple-icon-with-long-shadow-vector-id522855255?k=20&m=522855255&s=612x612&w=0&h=fLLvwEbgOmSzk1_jQ0MgDATEVcVOh_kqEe0rqi7aM5A="
+                    alt="default" srcset="">
+            </div>
+            <div class="repo-info" ng-switch="repo.description">
+                <h6>{{repo.full_name}}</h6>
+                <p ng-switch-when!="null">{{repo.description}}</p>
+                <p ng-switch-when="null">description</p>
+            </div>
+        </div>
+    </div>
+</div>

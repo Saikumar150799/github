@@ -1,0 +1,14 @@
+<div ng-controller="mainCtrl" class="container">
+    <nav>
+        <div class="logo">
+            <img ng-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="logo">
+            <h1>Github Profile Viewer</h1>
+        </div>
+        <div class="search">
+            <input type="text" ng-model="userName" placeholder="Search user">
+        </div>
+    </nav>
+    <div ng-controller="allUsers">
+        <all-user arr="allUsers" when-scrolled=when-scrolled loadMore="loadMore()" name="userName"></all-user>
+    </div>
+</div>
