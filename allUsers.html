@@ -1,20 +1,19 @@
-<div class="allUserContainer" >
-    <div class="noUserFound" ng-show="!(arr|filter:name).length">
-        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="50px" alt="logo">
-        <h3 >Oops! no user found</h3>
+<div class="noUserFound" ng-show="!(arr|filter:name).length">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="50px" alt="logo">
+    <h3>Oops! no user found</h3>
+</div>
+<div class="allUsers" ng-repeat="user in arr  |  filter:name">
+    <div class="avatar">
+        <img ng-src={{user.avatar_url}} alt={{user.login}} srcset="">
     </div>
-    <div class="allUsers" ng-repeat="user in arr | filter:name">
-        <div class="avatar">
-            <img ng-src={{user.avatar_url}} alt={{user.login}} srcset="">
-        </div>
-        <div class="userInfo">
-            <a href="#!user/{{user.login}}">
-                <h3>{{user.login}}</h3>
-            </a>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quisquam doloribus eius rerum commodi,
-                repellendus excepturi! Ad, asperiores laborum similique corporis, vel nisi sit impedit natus officiis
-                ullam aliquam voluptas!</p>
-        </div>
+    <div class="userInfo">
+        <a href="#!user/{{user.login}}">
+            <h3>{{user.login}}</h3>
+        </a>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quisquam doloribus eius rerum
+            commodi,
+            repellendus excepturi! Ad, asperiores laborum similique corporis, vel nisi sit impedit natus
+            officiis
+            ullam aliquam voluptas!</p>
     </div>
-    
 </div>
